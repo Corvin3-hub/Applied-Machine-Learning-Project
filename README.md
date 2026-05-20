@@ -1,4 +1,4 @@
-##Automated Defect Inspection in Semiconductor SEM Images
+# Automated Defect Inspection in Semiconductor SEM Images
 
 ## Repository Link
 
