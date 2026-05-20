@@ -20,10 +20,17 @@ Approaches or solutions that have been tried before on similar projects.
   - **Outcomes**: YOLOv8 achieved the strongest result, with reported mean average precision of 96%, and when tested on real SEM data it detected 84.6% of bridge defects and 78.3% of break defects
   - **Relation to the Project**: introduces to different existing models, addresses issue of the limited data
 
-- **Source 3**: [Title of Source 3]
+- **Source 3**: Defect inspection in semiconductor images using FAST-MCD method and neural network
 
-  - **[Link]()**
-  - **Objective**:
-  - **Methods**:
-  - **Outcomes**:
-  - **Relation to the Project**:
+  - https://link.springer.com/content/pdf/10.1007/s00170-023-12287-z.pdf
+    
+  - **Objective**: Develop an automatic semiconductor defect inspection framework capable of detecting defects from a single SEM-like image without requiring golden/reference die images or layout databases. The work aims to improve robustness and interpretability for different semiconductor image structures.
+  - **Methods**: The authors proposed a hybrid inspection pipeline that first classifies images into four categories: flat, linear, patterned, and complex.
+
+    Cosine similarity and moment tensor analysis were used for structural classification.
+    FAST-MCD (Fast Minimum Covariance Determinant) statistical outlier detection was applied to flat images.
+    Structure-removal techniques were used for linear and patterned images to generate defect-free references.
+    A U-Net + ResNet-style segmentation neural network was applied for complex structures.
+    Data augmentation included normalization, image complement, rotations, and flipping.
+  - **Outcomes**: The proposed hybrid framework achieved better segmentation and detection performance compared to conventional CNN-only and self-similarity methods. Dataset: 171 semiconductor images collected from literature. Training set expanded to 2,480 images using augmentation. Achieved highest average GDS and IoU scores among compared methods. Successfully detected all 16 defective validation images while reducing false positives compared to competing approaches.
+  - **Relation to the Project**: This paper is highly relevant to our project because it addresses semiconductor/SEM defect inspection under limited-data conditions, similar to our lithography SEM defect detection task. The work demonstrates how combining statistical image analysis with deep learning can improve explainability and robustness beyond conventional black-box CNNs. It also provides valuable ideas for handling repetitive SEM structures, preprocessing strategies, and segmentation-based defect localization using small datasets.
